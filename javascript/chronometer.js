@@ -10,9 +10,17 @@ class Chronometer {
   getMinutes() {
     return Math.floor(this.currentTime / 60)
   }
-  getSeconds() {}
-  twoDigitsNumber() {}
-  stopClick() {}
+
+  getSeconds() {
+    return this.currentTime % 60
+  }
+  twoDigitsNumber(value) {
+    return value < 10 ? `0${value}` : `${value}` //option 1
+    //return value < 10 ? "0" + value.toString() : value.toString() //option 2
+  }
+  stopClick() {
+    clearInterval(this.intervalId)
+  }
   resetClick() {}
   splitClick() {}
 }
